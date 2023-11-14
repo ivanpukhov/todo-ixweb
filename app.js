@@ -277,7 +277,7 @@ app.get('/admin/users/:userId/goals', authenticateToken, (req, res) => {
 });
 
 
-const PORT = 8080;
+const PORT = 5555;
 const HOST = '0.0.0.0'; // Это позволит вам слушать на всех доступных сетевых интерфейсах
 
 app.listen(PORT, HOST, () => {
