@@ -277,6 +277,18 @@ app.get('/admin/users/:userId/goals', authenticateToken, (req, res) => {
     });
 });
 
+// Роут для получения всех целей верхнего уровня для текущего пользователя
+app.get('/goals/top-level', authenticateToken, (req, res) => {
+    const userId = req.user.id;
+
+    db.all('SELECT * FROM goals WHERE user_id = ? AND parent_id IS NULL', [userId], (err, goals) => {
+        if (err) {
+            return res.status(500).send('Error fetching top level goals');
+        }
+        res.status(200).send(goals);
+    });
+});
+
 
 const PORT = 5555;
 const HOST = '0.0.0.0'; // Это позволит вам слушать на всех доступных сетевых интерфейсах
