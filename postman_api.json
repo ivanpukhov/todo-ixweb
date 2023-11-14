@@ -1,0 +1,415 @@
+{
+  "info": {
+    "_postman_id": "5ef59bae-4427-4139-8b70-e921193f11bf",
+    "name": "Goal Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28149422"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n    \n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/register",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/login",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create global Goal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Выучить реакт\",\n    \"description\": \"Я должен выучить реакт чтобы писать на нем сайты без подсказок и гпт\",\n    \"goalType\": \"global\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Monthly Goal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"1 месяц\",\n    \"description\": \"Буду учить базовый синтаксис. в конце месяца хочу написать интернет магазин\",\n    \"goalType\": \"monthly\",\n    \"parentId\": 1 //это id родительского элемента (цели на категорию выше)\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Weekly Goal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Первая неделя\",\n    \"description\": \"За эту неделю должен научиться связывать сервер с фронтендом с помощью axios\",\n    \"goalType\": \"weekly\",\n    \"parentId\": 2  //это id родительского элемента (цели на категорию выше)\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Daily Goal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"День 1\",\n    \"description\": \"Изучить основы jsx, научиться устанавливать библиотеки, работа с router-dom\",\n    \"goalType\": \"daily\",\n    \"parentId\": 3  //это id родительского элемента (цели на категорию выше)\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Goals",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Goal Tree",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals/",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mark Goal as Completed",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"isCompleted\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals/4/complete",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals",
+            "4",
+            "complete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Comment to Goal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5OTc2NTgxLCJleHAiOjE3MDAwNjI5ODF9.eagV51UkqSEhrWHWmz2dvy_AhpytT7ubPlOoz0RkwOE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"comment\": \"У меня получилось разобраться!!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals/4/comments",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals",
+            "4",
+            "comments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Goals and Comments for a User (Admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer [Your Token]",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://45.90.33.52:5555/admin/users/:userId/goals",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "admin",
+            "users",
+            ":userId",
+            "goals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Top Level Goals",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer [Your Token]",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://45.90.33.52:5555/goals/top-level",
+          "protocol": "http",
+          "host": [
+            "45",
+            "90",
+            "33",
+            "52"
+          ],
+          "port": "5555",
+          "path": [
+            "goals",
+            "top-level"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
